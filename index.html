@@ -110,77 +110,77 @@ iframe{
 
         <div class="form-group">
             <label>Nama Produk</label>
-            <input type="text" id="productName" value="CREAM WHITENING SPF50">
+            <input type="text" id="productName" placeholder="Masukkan nama produk">
         </div>
 
         <div class="form-group">
             <label>Harga Sekarang</label>
-            <input type="text" id="priceNow" value="149000">
+            <input type="text" id="priceNow" placeholder="149000">
         </div>
 
         <div class="form-group">
             <label>Harga Coret</label>
-            <input type="text" id="priceOld" value="195000">
+            <input type="text" id="priceOld" placeholder="195000">
         </div>
 
         <div class="form-group">
             <label>Gambar 1</label>
-            <input type="text" id="img1" value="https://down-id.img.susercontent.com/file/id-11134207-822wh-mmpmrwn2d1qbaf.webp">
+            <input type="text" id="img1" placeholder="https://example.com/image1.jpg">
         </div>
 
         <div class="form-group">
             <label>Gambar 2</label>
-            <input type="text" id="img2" value="https://down-id.img.susercontent.com/file/id-11134207-822wk-mmksshp7x1c34f">
+            <input type="text" id="img2" placeholder="https://example.com/image2.jpg">
         </div>
 
         <div class="form-group">
             <label>Gambar 3</label>
-            <input type="text" id="img3" value="https://down-id.img.susercontent.com/file/id-11134207-8224y-mioncgoznc3rfb">
+            <input type="text" id="img3" placeholder="https://example.com/image3.jpg">
         </div>
 
         <div class="form-group">
             <label>Gambar 4</label>
-            <input type="text" id="img4" value="">
+            <input type="text" id="img4" placeholder="https://example.com/image4.jpg">
         </div>
 
         <div class="form-group">
             <label>Gambar 5</label>
-            <input type="text" id="img5" value="">
+            <input type="text" id="img5" placeholder="https://example.com/image5.jpg">
         </div>
 
         <div class="form-group">
             <label>Deskripsi Umum</label>
-            <textarea id="description">Cream whitening SPF50 membantu mencerahkan dan melindungi kulit dari sinar UV.</textarea>
+            <textarea id="description" placeholder="Masukkan deskripsi produk"></textarea>
         </div>
 
         <div class="form-group">
             <label>Judul Deskripsi 1</label>
-            <input type="text" id="descTitle1" value="Perlindungan SPF 50">
+            <input type="text" id="descTitle1" placeholder="Judul fitur pertama">
         </div>
 
         <div class="form-group">
             <label>Isi Deskripsi 1</label>
-            <textarea id="descText1">Melindungi kulit dari sinar UV dan menjaga kulit tetap cerah sepanjang hari.</textarea>
+            <textarea id="descText1" placeholder="Isi fitur pertama"></textarea>
         </div>
 
         <div class="form-group">
             <label>Judul Deskripsi 2</label>
-            <input type="text" id="descTitle2" value="Mencerahkan Wajah">
+            <input type="text" id="descTitle2" placeholder="Judul fitur kedua">
         </div>
 
         <div class="form-group">
             <label>Isi Deskripsi 2</label>
-            <textarea id="descText2">Membantu membuat wajah tampak lebih glowing dan sehat alami.</textarea>
+            <textarea id="descText2" placeholder="Isi fitur kedua"></textarea>
         </div>
 
         <div class="form-group">
             <label>Nama Toko</label>
-            <input type="text" id="shopName" value="venolliastore.com">
+            <input type="text" id="shopName" placeholder="Nama toko">
         </div>
 
         <div class="form-group">
             <label>Embed Code OrderOnline</label>
-            <textarea id="embedCode"></textarea>
+            <textarea id="embedCode" placeholder="Paste embed code di sini"></textarea>
 
             <div class="small">
                 Paste embed code OrderOnline di sini
@@ -203,6 +203,9 @@ iframe{
 <script>
 
 function rupiah(number){
+
+    if(!number) return "Rp 0";
+
     return "Rp " + Number(number).toLocaleString("id-ID");
 }
 
@@ -263,6 +266,7 @@ body{
 .swiper{
     width:100%;
     aspect-ratio:1/1;
+    background:#eee;
 }
 
 .swiper img{
@@ -301,7 +305,6 @@ body{
     margin-top:12px;
     font-size:20px;
     font-weight:bold;
-    line-height:1.5;
 }
 
 .rating{
@@ -370,22 +373,6 @@ body{
     margin-top:15px;
 }
 
-.review{
-    border-bottom:1px solid #eee;
-    padding:15px 0;
-}
-
-.review-name{
-    font-weight:bold;
-    margin-bottom:5px;
-}
-
-.review-text{
-    color:#555;
-    line-height:1.6;
-    font-size:14px;
-}
-
 .buy-btn{
     width:100%;
     border:none;
@@ -405,23 +392,27 @@ body{
 
 <div class="container">
 
-    <!-- SLIDER -->
-
     <div class="swiper mySwiper">
 
         <div class="swiper-wrapper">
 
+            ${img1 ? `
             <div class="swiper-slide">
                 <img src="${img1}">
             </div>
+            ` : ''}
 
+            ${img2 ? `
             <div class="swiper-slide">
                 <img src="${img2}">
             </div>
+            ` : ''}
 
+            ${img3 ? `
             <div class="swiper-slide">
                 <img src="${img3}">
             </div>
+            ` : ''}
 
             ${img4 ? `
             <div class="swiper-slide">
@@ -441,21 +432,13 @@ body{
 
     </div>
 
-    <!-- FLASH -->
-
     <div class="flash-sale">
 
-        <div>
-            FLASH SALE HARI INI
-        </div>
+        <div>FLASH SALE</div>
 
-        <div>
-            STOK TERBATAS
-        </div>
+        <div>STOK TERBATAS</div>
 
     </div>
-
-    <!-- CONTENT -->
 
     <div class="content">
 
@@ -472,13 +455,9 @@ body{
             ⭐ 4.9 | 2.5RB+ Terjual
         </div>
 
-        <!-- TOKO -->
-
         <div class="shop-box">
             🏪 ${shopName}
         </div>
-
-        <!-- DESKRIPSI -->
 
         <div class="section">
 
@@ -492,14 +471,13 @@ body{
 
         </div>
 
-        <!-- FITUR -->
-
         <div class="section">
 
             <div class="section-title">
                 Fitur Produk
             </div>
 
+            ${img2 ? `
             <div class="feature-card">
 
                 <img src="${img2}" class="feature-img">
@@ -517,7 +495,9 @@ body{
                 </div>
 
             </div>
+            ` : ''}
 
+            ${img3 ? `
             <div class="feature-card">
 
                 <img src="${img3}" class="feature-img">
@@ -535,6 +515,7 @@ body{
                 </div>
 
             </div>
+            ` : ''}
 
             ${img4 ? `
             <img src="${img4}" class="extra-product-img">
@@ -545,42 +526,6 @@ body{
             ` : ''}
 
         </div>
-
-        <!-- REVIEW -->
-
-        <div class="section">
-
-            <div class="section-title">
-                Penilaian Produk
-            </div>
-
-            <div class="review">
-
-                <div class="review-name">
-                    ⭐⭐⭐⭐⭐ Jessica
-                </div>
-
-                <div class="review-text">
-                    Produk bagus banget dan cepat sampai.
-                </div>
-
-            </div>
-
-            <div class="review">
-
-                <div class="review-name">
-                    ⭐⭐⭐⭐⭐ Vania
-                </div>
-
-                <div class="review-text">
-                    Packing aman dan hasilnya bagus.
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- ORDER -->
 
         <div class="section">
 
