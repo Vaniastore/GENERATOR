@@ -46,7 +46,6 @@ h2{
 .form-group label{
     display:block;
     margin-bottom:6px;
-    font-size:14px;
     font-weight:bold;
 }
 
@@ -58,10 +57,6 @@ h2{
     border-radius:8px;
 }
 
-textarea{
-    resize:none;
-}
-
 button{
     width:100%;
     padding:14px;
@@ -71,7 +66,6 @@ button{
     color:#fff;
     font-weight:bold;
     cursor:pointer;
-    font-size:15px;
 }
 
 iframe{
@@ -79,42 +73,28 @@ iframe{
     height:700px;
     border:none;
     border-radius:14px;
-    background:#fff;
 }
 
 .result-html{
     width:100%;
-    height:500px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:15px;
+    height:400px;
     margin-top:20px;
-    font-size:12px;
 }
 
-.gallery-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-.gallery-item{
-    border-radius:12px;
-    overflow:hidden;
-    border:1px solid #eee;
-    background:#fff;
-}
-
-.gallery-item img{
-    width:100%;
-    display:block;
+.info-box{
+    padding:12px;
+    background:#fff3cd;
+    border-radius:8px;
+    font-size:13px;
+    margin-bottom:15px;
+    line-height:1.7;
 }
 
 @media(max-width:900px){
 
-    .wrapper{
-        grid-template-columns:1fr;
-    }
+.wrapper{
+    grid-template-columns:1fr;
+}
 
 }
 
@@ -124,170 +104,158 @@ iframe{
 
 <div class="wrapper">
 
-    <!-- PANEL INPUT -->
+<!-- INPUT -->
 
-    <div class="panel">
+<div class="panel">
 
-        <h2>Generator Landing Page</h2>
+<h2>Generator Landing Page</h2>
 
-        <div class="form-group">
-            <label>Nama Produk</label>
-            <input type="text" id="productName">
-        </div>
+<div class="form-group">
+<label>Nama Produk</label>
+<input type="text" id="productName">
+</div>
 
-        <div class="form-group">
-            <label>Harga Sekarang</label>
-            <input type="text" id="priceNow">
-        </div>
+<div class="form-group">
+<label>Harga Sekarang</label>
+<input type="text" id="priceNow">
+</div>
 
-        <div class="form-group">
-            <label>Harga Coret</label>
-            <input type="text" id="priceOld">
-        </div>
+<div class="form-group">
+<label>Harga Coret</label>
+<input type="text" id="priceOld">
+</div>
 
-        <!-- 5 BAGAN GAMBAR -->
+<!-- GAMBAR -->
 
-        <div class="form-group">
-            <label>Gambar Slider 1</label>
-            <input type="text" id="img1">
-        </div>
+<div class="form-group">
+<label>Link Gambar Slider 1</label>
+<input type="text" id="img1">
+</div>
 
-        <div class="form-group">
-            <label>Gambar Slider 2</label>
-            <input type="text" id="img2">
-        </div>
+<div class="form-group">
+<label>Link Gambar Slider 2</label>
+<input type="text" id="img2">
+</div>
 
-        <div class="form-group">
-            <label>Gambar Slider 3</label>
-            <input type="text" id="img3">
-        </div>
+<div class="form-group">
+<label>Link Gambar Slider 3</label>
+<input type="text" id="img3">
+</div>
 
-        <div class="form-group">
-            <label>Gambar Slider 4</label>
-            <input type="text" id="img4">
-        </div>
+<div class="form-group">
+<label>Link Gambar Slider 4</label>
+<input type="text" id="img4">
+</div>
 
-        <div class="form-group">
-            <label>Gambar Slider 5</label>
-            <input type="text" id="img5">
-        </div>
+<div class="form-group">
+<label>Link Gambar Slider 5</label>
+<input type="text" id="img5">
+</div>
 
-        <div class="form-group">
-            <label>Deskripsi Produk</label>
-            <textarea id="description" rows="5"></textarea>
-        </div>
+<div class="form-group">
+<label>Deskripsi Produk</label>
+<textarea id="description" rows="5"></textarea>
+</div>
 
-        <div class="form-group">
-            <label>Judul Fitur 1</label>
-            <input type="text" id="featureTitle1">
-        </div>
+<!-- FITUR -->
 
-        <div class="form-group">
-            <label>Isi Fitur 1</label>
-            <textarea id="featureText1" rows="4"></textarea>
-        </div>
+<div class="form-group">
+<label>Judul Fitur 1</label>
+<input type="text" id="featureTitle1">
+</div>
 
-        <div class="form-group">
-            <label>Judul Fitur 2</label>
-            <input type="text" id="featureTitle2">
-        </div>
+<div class="form-group">
+<label>Isi Fitur 1</label>
+<textarea id="featureText1"></textarea>
+</div>
 
-        <div class="form-group">
-            <label>Isi Fitur 2</label>
-            <textarea id="featureText2" rows="4"></textarea>
-        </div>
+<div class="form-group">
+<label>Judul Fitur 2</label>
+<input type="text" id="featureTitle2">
+</div>
 
-        <div class="form-group">
-            <label>Nama Toko</label>
-            <input type="text" id="shopName">
-        </div>
+<div class="form-group">
+<label>Isi Fitur 2</label>
+<textarea id="featureText2"></textarea>
+</div>
 
-        <div class="form-group">
-            <label>Embed Code</label>
-            <textarea id="embedCode" rows="6"></textarea>
-        </div>
+<div class="form-group">
+<label>Judul Fitur 3</label>
+<input type="text" id="featureTitle3">
+</div>
 
-        <!-- BAGAN GALERI -->
+<div class="form-group">
+<label>Isi Fitur 3</label>
+<textarea id="featureText3"></textarea>
+</div>
 
-        <div class="form-group">
-            <label>Bagan Gambar Produk</label>
+<div class="info-box">
+Gambar fitur otomatis mengambil dari:
+<br><br>
+Fitur 1 = Slider 1
+<br>
+Fitur 2 = Slider 2
+<br>
+Fitur 3 = Slider 3
+</div>
 
-            <textarea id="galleryImages" rows="8" placeholder="1 link gambar per baris"></textarea>
-        </div>
+<!-- EMBED -->
 
-        <button onclick="generatePage()">
-            GENERATE LANDING PAGE
-        </button>
+<div class="form-group">
+<label>Embed Code</label>
+<textarea id="embedCode" rows="5"></textarea>
+</div>
 
-    </div>
+<button onclick="generatePage()">
+GENERATE
+</button>
 
-    <!-- PREVIEW -->
+</div>
 
-    <div class="panel">
+<!-- PREVIEW -->
 
-        <h2>Preview</h2>
+<div class="panel">
 
-        <iframe id="preview"></iframe>
+<h2>Preview</h2>
 
-        <h2 style="margin-top:20px;">
-            Hasil Generate HTML
-        </h2>
+<iframe id="preview"></iframe>
 
-        <textarea id="resultHtml" class="result-html"></textarea>
+<h2>Hasil HTML</h2>
 
-        <button onclick="copyHtml()" style="margin-top:15px;">
-            COPY HTML
-        </button>
+<textarea id="resultHtml" class="result-html"></textarea>
 
-    </div>
+<button onclick="copyHtml()">
+COPY HTML
+</button>
+
+</div>
 
 </div>
 
 <script>
 
-function rupiah(number){
+function rupiah(n){
 
-    if(!number) return "Rp 0";
-
-    return "Rp " + Number(number).toLocaleString("id-ID");
+return "Rp " + Number(n || 0).toLocaleString("id-ID");
 
 }
 
 function generatePage(){
 
-    const productName = document.getElementById("productName").value;
-    const priceNow = document.getElementById("priceNow").value;
-    const priceOld = document.getElementById("priceOld").value;
+const v = id => document.getElementById(id).value;
 
-    const img1 = document.getElementById("img1").value;
-    const img2 = document.getElementById("img2").value;
-    const img3 = document.getElementById("img3").value;
-    const img4 = document.getElementById("img4").value;
-    const img5 = document.getElementById("img5").value;
+const featureImg1 = v("img1");
+const featureImg2 = v("img2");
+const featureImg3 = v("img3");
 
-    const description = document.getElementById("description").value;
-
-    const featureTitle1 = document.getElementById("featureTitle1").value;
-    const featureText1 = document.getElementById("featureText1").value;
-
-    const featureTitle2 = document.getElementById("featureTitle2").value;
-    const featureText2 = document.getElementById("featureText2").value;
-
-    const shopName = document.getElementById("shopName").value;
-
-    const embedCode = document.getElementById("embedCode").value;
-
-    const galleryImages = document.getElementById("galleryImages").value
-    .split("\n")
-    .filter(img => img.trim() !== "");
-
-    const html = `
+const html = `
 
 <!DOCTYPE html>
 <html lang="id">
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -295,134 +263,89 @@ function generatePage(){
 <style>
 
 body{
-    margin:0;
-    background:#f5f5f5;
-    font-family:Arial,sans-serif;
+margin:0;
+background:#f5f5f5;
+font-family:Arial,sans-serif;
 }
 
 .container{
-    max-width:500px;
-    margin:auto;
-    background:#fff;
-}
-
-.swiper{
-    width:100%;
-    aspect-ratio:1/1;
+max-width:500px;
+margin:auto;
+background:#fff;
 }
 
 .swiper img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 .flash-sale{
-    background:#ee4d2d;
-    color:#fff;
-    padding:15px;
-    font-weight:bold;
-    display:flex;
-    justify-content:space-between;
+background:#ee4d2d;
+color:#fff;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-weight:bold;
+}
+
+.timer{
+background:#00000033;
+padding:6px 10px;
+border-radius:8px;
 }
 
 .content{
-    padding:15px;
+padding:15px;
 }
 
 .price{
-    color:#ee4d2d;
-    font-size:30px;
-    font-weight:bold;
+font-size:30px;
+font-weight:bold;
+color:#ee4d2d;
 }
 
 .old-price{
-    color:#999;
-    text-decoration:line-through;
-    margin-left:10px;
+text-decoration:line-through;
+color:#999;
+margin-left:10px;
 }
 
-.title{
-    margin-top:12px;
-    font-size:22px;
-    font-weight:bold;
+.feature{
+border:1px solid #eee;
+border-radius:12px;
+overflow:hidden;
+margin-top:20px;
 }
 
-.rating{
-    margin-top:10px;
-    color:#666;
-}
-
-.shop{
-    margin-top:20px;
-    padding:15px;
-    background:#fafafa;
-    border:1px solid #eee;
-    border-radius:10px;
-}
-
-.section{
-    margin-top:25px;
-}
-
-.section-title{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:15px;
-}
-
-.feature-card{
-    border:1px solid #eee;
-    border-radius:12px;
-    overflow:hidden;
-    margin-bottom:20px;
-}
-
-.feature-card img{
-    width:100%;
+.feature img{
+width:100%;
 }
 
 .feature-content{
-    padding:15px;
+padding:15px;
 }
 
-.feature-title{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:10px;
+.testimonial{
+border-bottom:1px solid #eee;
+padding:15px 0;
 }
 
-.feature-text{
-    line-height:1.7;
-    color:#555;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-.gallery-item{
-    border-radius:12px;
-    overflow:hidden;
-    border:1px solid #eee;
-}
-
-.gallery-item img{
-    width:100%;
-    display:block;
+.testimonial b{
+display:block;
+margin-bottom:6px;
 }
 
 .buy-btn{
-    width:100%;
-    border:none;
-    padding:16px;
-    background:#ee4d2d;
-    color:#fff;
-    border-radius:10px;
-    font-weight:bold;
-    margin-top:20px;
+width:100%;
+padding:15px;
+background:#ee4d2d;
+color:#fff;
+text-align:center;
+border-radius:12px;
+font-weight:bold;
+margin-top:20px;
 }
 
 </style>
@@ -433,183 +356,163 @@ body{
 
 <div class="container">
 
-    <!-- SLIDER -->
+<!-- SLIDER -->
 
-    <div class="swiper mySwiper">
+<div class="swiper mySwiper">
 
-        <div class="swiper-wrapper">
+<div class="swiper-wrapper">
 
-            ${img1 ? `
-            <div class="swiper-slide">
-                <img src="${img1}">
-            </div>
-            ` : ''}
+${v("img1") ? `
+<div class="swiper-slide">
+<img src="${v("img1")}">
+</div>
+` : ""}
 
-            ${img2 ? `
-            <div class="swiper-slide">
-                <img src="${img2}">
-            </div>
-            ` : ''}
+${v("img2") ? `
+<div class="swiper-slide">
+<img src="${v("img2")}">
+</div>
+` : ""}
 
-            ${img3 ? `
-            <div class="swiper-slide">
-                <img src="${img3}">
-            </div>
-            ` : ''}
+${v("img3") ? `
+<div class="swiper-slide">
+<img src="${v("img3")}">
+</div>
+` : ""}
 
-            ${img4 ? `
-            <div class="swiper-slide">
-                <img src="${img4}">
-            </div>
-            ` : ''}
+${v("img4") ? `
+<div class="swiper-slide">
+<img src="${v("img4")}">
+</div>
+` : ""}
 
-            ${img5 ? `
-            <div class="swiper-slide">
-                <img src="${img5}">
-            </div>
-            ` : ''}
+${v("img5") ? `
+<div class="swiper-slide">
+<img src="${v("img5")}">
+</div>
+` : ""}
 
-        </div>
+</div>
 
-        <div class="swiper-pagination"></div>
+</div>
 
-    </div>
+<!-- FLASH SALE -->
 
-    <div class="flash-sale">
+<div class="flash-sale">
 
-        <div>FLASH SALE</div>
+<div>
+FLASH SALE 🔥
+</div>
 
-        <div>STOK TERBATAS</div>
+<div class="timer" id="timer">
+12:00:00
+</div>
 
-    </div>
+</div>
 
-    <div class="content">
+<div class="content">
 
-        <div>
+<div class="price">
+${rupiah(v("priceNow"))}
 
-            <span class="price">${rupiah(priceNow)}</span>
+<span class="old-price">
+${rupiah(v("priceOld"))}
+</span>
 
-            <span class="old-price">${rupiah(priceOld)}</span>
+</div>
 
-        </div>
+<h2 style="margin-top:10px;">
+${v("productName")}
+</h2>
 
-        <div class="title">
-            ${productName}
-        </div>
+<p style="margin-top:15px;line-height:1.7;">
+${v("description")}
+</p>
 
-        <div class="rating">
-            ⭐ 4.9 | 2.5RB+ Terjual
-        </div>
+<!-- FITUR -->
 
-        <div class="shop">
-            🏪 ${shopName}
-        </div>
+${featureImg1 ? `
+<div class="feature">
 
-        <!-- DESKRIPSI -->
+<img src="${featureImg1}">
 
-        <div class="section">
+<div class="feature-content">
 
-            <div class="section-title">
-                Deskripsi Produk
-            </div>
+<h3>${v("featureTitle1")}</h3>
 
-            <div>
-                ${description}
-            </div>
+<p>${v("featureText1")}</p>
 
-        </div>
+</div>
 
-        <!-- FITUR -->
+</div>
+` : ""}
 
-        <div class="section">
+${featureImg2 ? `
+<div class="feature">
 
-            <div class="section-title">
-                Fitur Produk
-            </div>
+<img src="${featureImg2}">
 
-            ${img2 ? `
-            <div class="feature-card">
+<div class="feature-content">
 
-                <img src="${img2}">
+<h3>${v("featureTitle2")}</h3>
 
-                <div class="feature-content">
+<p>${v("featureText2")}</p>
 
-                    <div class="feature-title">
-                        ${featureTitle1}
-                    </div>
+</div>
 
-                    <div class="feature-text">
-                        ${featureText1}
-                    </div>
+</div>
+` : ""}
 
-                </div>
+${featureImg3 ? `
+<div class="feature">
 
-            </div>
-            ` : ''}
+<img src="${featureImg3}">
 
-            ${img3 ? `
-            <div class="feature-card">
+<div class="feature-content">
 
-                <img src="${img3}">
+<h3>${v("featureTitle3")}</h3>
 
-                <div class="feature-content">
+<p>${v("featureText3")}</p>
 
-                    <div class="feature-title">
-                        ${featureTitle2}
-                    </div>
+</div>
 
-                    <div class="feature-text">
-                        ${featureText2}
-                    </div>
+</div>
+` : ""}
 
-                </div>
+<!-- TESTIMONI -->
 
-            </div>
-            ` : ''}
+<h2 style="margin-top:30px;">
+Testimoni
+</h2>
 
-        </div>
+<div class="testimonial">
+<b>Jessica ⭐⭐⭐⭐⭐</b>
+Produk bagus banget, packing aman dan pengiriman cepat.
+</div>
 
-        <!-- GALERI -->
+<div class="testimonial">
+<b>Rina ⭐⭐⭐⭐⭐</b>
+Sesuai deskripsi, kualitas premium.
+</div>
 
-        <div class="section">
+<div class="testimonial">
+<b>Nabila ⭐⭐⭐⭐⭐</b>
+Udah repeat order, recommended banget.
+</div>
 
-            <div class="section-title">
-                Galeri Produk
-            </div>
+<!-- EMBED -->
 
-            <div class="gallery-grid">
+<div style="margin-top:25px;">
 
-                ${galleryImages.map(img => `
+${v("embedCode")}
 
-                <div class="gallery-item">
+</div>
 
-                    <img src="${img}">
+<div class="buy-btn">
+BELI SEKARANG
+</div>
 
-                </div>
-
-                `).join('')}
-
-            </div>
-
-        </div>
-
-        <!-- FORM -->
-
-        <div class="section">
-
-            <div class="section-title">
-                Form Pemesanan
-            </div>
-
-            ${embedCode}
-
-            <button class="buy-btn">
-                BELI SEKARANG
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
@@ -619,15 +522,30 @@ body{
 
 new Swiper(".mySwiper",{
 
-    pagination:{
-        el:".swiper-pagination"
-    },
-
-    autoplay:{
-        delay:3000
-    }
+autoplay:{
+delay:3000
+}
 
 });
+
+let time = 43200;
+
+setInterval(()=>{
+
+let h = Math.floor(time/3600);
+let m = Math.floor((time%3600)/60);
+let s = time%60;
+
+document.getElementById("timer").innerHTML =
+String(h).padStart(2,"0")+":"+
+String(m).padStart(2,"0")+":"+
+String(s).padStart(2,"0");
+
+if(time > 0){
+time--;
+}
+
+},1000);
 
 <\/script>
 
@@ -636,23 +554,21 @@ new Swiper(".mySwiper",{
 
 `;
 
-    document.getElementById("preview").srcdoc = html;
+document.getElementById("preview").srcdoc = html;
 
-    document.getElementById("resultHtml").value = html;
+document.getElementById("resultHtml").value = html;
 
 }
 
 function copyHtml(){
 
-    const textarea = document.getElementById("resultHtml");
+const textarea = document.getElementById("resultHtml");
 
-    textarea.select();
+textarea.select();
 
-    textarea.setSelectionRange(0,999999);
+document.execCommand("copy");
 
-    navigator.clipboard.writeText(textarea.value);
-
-    alert("HTML berhasil di copy");
+alert("HTML berhasil di copy");
 
 }
 
