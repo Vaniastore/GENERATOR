@@ -60,7 +60,6 @@ h2{
 
 textarea{
     resize:none;
-    min-height:100px;
 }
 
 button{
@@ -77,16 +76,20 @@ button{
 
 iframe{
     width:100%;
-    height:95vh;
+    height:700px;
     border:none;
     border-radius:14px;
     background:#fff;
 }
 
-.small{
+.result-html{
+    width:100%;
+    height:500px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:15px;
+    margin-top:20px;
     font-size:12px;
-    color:#777;
-    margin-top:5px;
 }
 
 @media(max-width:900px){
@@ -103,88 +106,74 @@ iframe{
 
 <div class="wrapper">
 
-    <!-- PANEL -->
+    <!-- PANEL INPUT -->
     <div class="panel">
 
         <h2>Generator Landing Page</h2>
 
         <div class="form-group">
             <label>Nama Produk</label>
-            <input type="text" id="productName" placeholder="Masukkan nama produk">
+            <input type="text" id="productName">
         </div>
 
         <div class="form-group">
             <label>Harga Sekarang</label>
-            <input type="text" id="priceNow" placeholder="149000">
+            <input type="text" id="priceNow">
         </div>
 
         <div class="form-group">
             <label>Harga Coret</label>
-            <input type="text" id="priceOld" placeholder="195000">
+            <input type="text" id="priceOld">
         </div>
 
         <div class="form-group">
             <label>Gambar 1</label>
-            <input type="text" id="img1" placeholder="https://example.com/image1.jpg">
+            <input type="text" id="img1">
         </div>
 
         <div class="form-group">
             <label>Gambar 2</label>
-            <input type="text" id="img2" placeholder="https://example.com/image2.jpg">
+            <input type="text" id="img2">
         </div>
 
         <div class="form-group">
             <label>Gambar 3</label>
-            <input type="text" id="img3" placeholder="https://example.com/image3.jpg">
+            <input type="text" id="img3">
         </div>
 
         <div class="form-group">
-            <label>Gambar 4</label>
-            <input type="text" id="img4" placeholder="https://example.com/image4.jpg">
+            <label>Deskripsi Produk</label>
+            <textarea id="description" rows="5"></textarea>
         </div>
 
         <div class="form-group">
-            <label>Gambar 5</label>
-            <input type="text" id="img5" placeholder="https://example.com/image5.jpg">
+            <label>Judul Fitur 1</label>
+            <input type="text" id="featureTitle1">
         </div>
 
         <div class="form-group">
-            <label>Deskripsi Umum</label>
-            <textarea id="description" placeholder="Masukkan deskripsi produk"></textarea>
+            <label>Isi Fitur 1</label>
+            <textarea id="featureText1" rows="4"></textarea>
         </div>
 
         <div class="form-group">
-            <label>Judul Deskripsi 1</label>
-            <input type="text" id="descTitle1" placeholder="Judul fitur pertama">
+            <label>Judul Fitur 2</label>
+            <input type="text" id="featureTitle2">
         </div>
 
         <div class="form-group">
-            <label>Isi Deskripsi 1</label>
-            <textarea id="descText1" placeholder="Isi fitur pertama"></textarea>
-        </div>
-
-        <div class="form-group">
-            <label>Judul Deskripsi 2</label>
-            <input type="text" id="descTitle2" placeholder="Judul fitur kedua">
-        </div>
-
-        <div class="form-group">
-            <label>Isi Deskripsi 2</label>
-            <textarea id="descText2" placeholder="Isi fitur kedua"></textarea>
+            <label>Isi Fitur 2</label>
+            <textarea id="featureText2" rows="4"></textarea>
         </div>
 
         <div class="form-group">
             <label>Nama Toko</label>
-            <input type="text" id="shopName" placeholder="Nama toko">
+            <input type="text" id="shopName">
         </div>
 
         <div class="form-group">
-            <label>Embed Code OrderOnline</label>
-            <textarea id="embedCode" placeholder="Paste embed code di sini"></textarea>
-
-            <div class="small">
-                Paste embed code OrderOnline di sini
-            </div>
+            <label>Embed Code</label>
+            <textarea id="embedCode" rows="6"></textarea>
         </div>
 
         <button onclick="generatePage()">
@@ -195,7 +184,21 @@ iframe{
 
     <!-- PREVIEW -->
     <div class="panel">
+
+        <h2>Preview</h2>
+
         <iframe id="preview"></iframe>
+
+        <h2 style="margin-top:20px;">
+            Hasil Generate HTML
+        </h2>
+
+        <textarea id="resultHtml" class="result-html"></textarea>
+
+        <button onclick="copyHtml()" style="margin-top:15px;">
+            COPY HTML
+        </button>
+
     </div>
 
 </div>
@@ -207,6 +210,7 @@ function rupiah(number){
     if(!number) return "Rp 0";
 
     return "Rp " + Number(number).toLocaleString("id-ID");
+
 }
 
 function generatePage(){
@@ -218,16 +222,14 @@ function generatePage(){
     const img1 = document.getElementById("img1").value;
     const img2 = document.getElementById("img2").value;
     const img3 = document.getElementById("img3").value;
-    const img4 = document.getElementById("img4").value;
-    const img5 = document.getElementById("img5").value;
 
     const description = document.getElementById("description").value;
 
-    const descTitle1 = document.getElementById("descTitle1").value;
-    const descText1 = document.getElementById("descText1").value;
+    const featureTitle1 = document.getElementById("featureTitle1").value;
+    const featureText1 = document.getElementById("featureText1").value;
 
-    const descTitle2 = document.getElementById("descTitle2").value;
-    const descText2 = document.getElementById("descText2").value;
+    const featureTitle2 = document.getElementById("featureTitle2").value;
+    const featureText2 = document.getElementById("featureText2").value;
 
     const shopName = document.getElementById("shopName").value;
 
@@ -246,15 +248,10 @@ function generatePage(){
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
 body{
+    margin:0;
     background:#f5f5f5;
+    font-family:Arial,sans-serif;
 }
 
 .container{
@@ -266,7 +263,6 @@ body{
 .swiper{
     width:100%;
     aspect-ratio:1/1;
-    background:#eee;
 }
 
 .swiper img{
@@ -279,10 +275,9 @@ body{
     background:#ee4d2d;
     color:#fff;
     padding:15px;
+    font-weight:bold;
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    font-weight:bold;
 }
 
 .content{
@@ -303,52 +298,42 @@ body{
 
 .title{
     margin-top:12px;
-    font-size:20px;
+    font-size:22px;
     font-weight:bold;
 }
 
 .rating{
     margin-top:10px;
     color:#666;
-    font-size:14px;
 }
 
-.shop-box{
+.shop{
     margin-top:20px;
     padding:15px;
-    border:1px solid #eee;
-    border-radius:12px;
     background:#fafafa;
+    border:1px solid #eee;
+    border-radius:10px;
 }
 
 .section{
     margin-top:25px;
-    padding-top:20px;
-    border-top:8px solid #f3f3f3;
 }
 
 .section-title{
-    font-size:16px;
+    font-size:18px;
     font-weight:bold;
     margin-bottom:15px;
 }
 
-.desc{
-    color:#555;
-    line-height:1.7;
-    font-size:14px;
-}
-
 .feature-card{
     border:1px solid #eee;
-    border-radius:14px;
+    border-radius:12px;
     overflow:hidden;
     margin-bottom:20px;
 }
 
-.feature-img{
+.feature-card img{
     width:100%;
-    display:block;
 }
 
 .feature-content{
@@ -361,31 +346,24 @@ body{
     margin-bottom:10px;
 }
 
-.feature-desc{
-    font-size:14px;
+.feature-text{
     line-height:1.7;
     color:#555;
-}
-
-.extra-product-img{
-    width:100%;
-    border-radius:14px;
-    margin-top:15px;
 }
 
 .buy-btn{
     width:100%;
     border:none;
     padding:16px;
-    border-radius:10px;
     background:#ee4d2d;
     color:#fff;
+    border-radius:10px;
     font-weight:bold;
-    font-size:16px;
-    margin-top:15px;
+    margin-top:20px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -414,18 +392,6 @@ body{
             </div>
             ` : ''}
 
-            ${img4 ? `
-            <div class="swiper-slide">
-                <img src="${img4}">
-            </div>
-            ` : ''}
-
-            ${img5 ? `
-            <div class="swiper-slide">
-                <img src="${img5}">
-            </div>
-            ` : ''}
-
         </div>
 
         <div class="swiper-pagination"></div>
@@ -443,8 +409,11 @@ body{
     <div class="content">
 
         <div>
+
             <span class="price">${rupiah(priceNow)}</span>
+
             <span class="old-price">${rupiah(priceOld)}</span>
+
         </div>
 
         <div class="title">
@@ -455,7 +424,7 @@ body{
             ⭐ 4.9 | 2.5RB+ Terjual
         </div>
 
-        <div class="shop-box">
+        <div class="shop">
             🏪 ${shopName}
         </div>
 
@@ -465,7 +434,7 @@ body{
                 Deskripsi Produk
             </div>
 
-            <div class="desc">
+            <div>
                 ${description}
             </div>
 
@@ -480,16 +449,16 @@ body{
             ${img2 ? `
             <div class="feature-card">
 
-                <img src="${img2}" class="feature-img">
+                <img src="${img2}">
 
                 <div class="feature-content">
 
                     <div class="feature-title">
-                        ${descTitle1}
+                        ${featureTitle1}
                     </div>
 
-                    <div class="feature-desc">
-                        ${descText1}
+                    <div class="feature-text">
+                        ${featureText1}
                     </div>
 
                 </div>
@@ -500,29 +469,21 @@ body{
             ${img3 ? `
             <div class="feature-card">
 
-                <img src="${img3}" class="feature-img">
+                <img src="${img3}">
 
                 <div class="feature-content">
 
                     <div class="feature-title">
-                        ${descTitle2}
+                        ${featureTitle2}
                     </div>
 
-                    <div class="feature-desc">
-                        ${descText2}
+                    <div class="feature-text">
+                        ${featureText2}
                     </div>
 
                 </div>
 
             </div>
-            ` : ''}
-
-            ${img4 ? `
-            <img src="${img4}" class="extra-product-img">
-            ` : ''}
-
-            ${img5 ? `
-            <img src="${img5}" class="extra-product-img">
             ` : ''}
 
         </div>
@@ -569,6 +530,22 @@ new Swiper(".mySwiper",{
 `;
 
     document.getElementById("preview").srcdoc = html;
+
+    document.getElementById("resultHtml").value = html;
+
+}
+
+function copyHtml(){
+
+    const textarea = document.getElementById("resultHtml");
+
+    textarea.select();
+
+    textarea.setSelectionRange(0,999999);
+
+    navigator.clipboard.writeText(textarea.value);
+
+    alert("HTML berhasil di copy");
 
 }
 
