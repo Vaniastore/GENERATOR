@@ -1,4 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Generator Landing Page Premium</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f3f3f3;
+}
+
+.wrapper{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:20px;
+    padding:20px;
+}
+
+.panel{
+    background:#fff;
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+textarea{
+    resize:none;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#ee4d2d;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
+}
+
+iframe{
+    width:100%;
+    height:700px;
+    border:none;
+    border-radius:14px;
+    background:#fff;
+}
+
+.result-html{
+    width:100%;
+    height:500px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:15px;
+    margin-top:20px;
+    font-size:12px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.gallery-item{
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid #eee;
+    background:#fff;
+}
+
+.gallery-item img{
+    width:100%;
+    display:block;
+}
+
+@media(max-width:900px){
+
+    .wrapper{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- PANEL INPUT -->
+
+    <div class="panel">
+
+        <h2>Generator Landing Page</h2>
+
+        <div class="form-group">
+            <label>Nama Produk</label>
+            <input type="text" id="productName">
+        </div>
+
+        <div class="form-group">
+            <label>Harga Sekarang</label>
+            <input type="text" id="priceNow">
+        </div>
+
+        <div class="form-group">
+            <label>Harga Coret</label>
+            <input type="text" id="priceOld">
+        </div>
+
+        <!-- 5 BAGAN GAMBAR -->
+
+        <div class="form-group">
+            <label>Gambar Slider 1</label>
+            <input type="text" id="img1">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar Slider 2</label>
+            <input type="text" id="img2">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar Slider 3</label>
+            <input type="text" id="img3">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar Slider 4</label>
+            <input type="text" id="img4">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar Slider 5</label>
+            <input type="text" id="img5">
+        </div>
+
+        <div class="form-group">
+            <label>Deskripsi Produk</label>
+            <textarea id="description" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Judul Fitur 1</label>
+            <input type="text" id="featureTitle1">
+        </div>
+
+        <div class="form-group">
+            <label>Isi Fitur 1</label>
+            <textarea id="featureText1" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Judul Fitur 2</label>
+            <input type="text" id="featureTitle2">
+        </div>
+
+        <div class="form-group">
+            <label>Isi Fitur 2</label>
+            <textarea id="featureText2" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Nama Toko</label>
+            <input type="text" id="shopName">
+        </div>
+
+        <div class="form-group">
+            <label>Embed Code</label>
+            <textarea id="embedCode" rows="6"></textarea>
+        </div>
+
+        <!-- BAGAN GALERI -->
+
+        <div class="form-group">
+            <label>Bagan Gambar Produk</label>
+
+            <textarea id="galleryImages" rows="8" placeholder="1 link gambar per baris"></textarea>
+        </div>
+
+        <button onclick="generatePage()">
+            GENERATE LANDING PAGE
+        </button>
+
+    </div>
+
+    <!-- PREVIEW -->
+
+    <div class="panel">
+
+        <h2>Preview</h2>
+
+        <iframe id="preview"></iframe>
+
+        <h2 style="margin-top:20px;">
+            Hasil Generate HTML
+        </h2>
+
+        <textarea id="resultHtml" class="result-html"></textarea>
+
+        <button onclick="copyHtml()" style="margin-top:15px;">
+            COPY HTML
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function rupiah(number){
+
+    if(!number) return "Rp 0";
+
+    return "Rp " + Number(number).toLocaleString("id-ID");
+
+}
+
+function generatePage(){
+
+    const productName = document.getElementById("productName").value;
+    const priceNow = document.getElementById("priceNow").value;
+    const priceOld = document.getElementById("priceOld").value;
+
+    const img1 = document.getElementById("img1").value;
+    const img2 = document.getElementById("img2").value;
+    const img3 = document.getElementById("img3").value;
+    const img4 = document.getElementById("img4").value;
+    const img5 = document.getElementById("img5").value;
+
+    const description = document.getElementById("description").value;
+
+    const featureTitle1 = document.getElementById("featureTitle1").value;
+    const featureText1 = document.getElementById("featureText1").value;
+
+    const featureTitle2 = document.getElementById("featureTitle2").value;
+    const featureText2 = document.getElementById("featureText2").value;
+
+    const shopName = document.getElementById("shopName").value;
+
+    const embedCode = document.getElementById("embedCode").value;
+
+    const galleryImages = document.getElementById("galleryImages").value
+    .split("\n")
+    .filter(img => img.trim() !== "");
+
+    const html = `
 
 <!DOCTYPE html>
 <html lang="id">
@@ -156,15 +439,35 @@ body{
 
         <div class="swiper-wrapper">
 
-            
+            ${img1 ? `
+            <div class="swiper-slide">
+                <img src="${img1}">
+            </div>
+            ` : ''}
 
-            
+            ${img2 ? `
+            <div class="swiper-slide">
+                <img src="${img2}">
+            </div>
+            ` : ''}
 
-            
+            ${img3 ? `
+            <div class="swiper-slide">
+                <img src="${img3}">
+            </div>
+            ` : ''}
 
-            
+            ${img4 ? `
+            <div class="swiper-slide">
+                <img src="${img4}">
+            </div>
+            ` : ''}
 
-            
+            ${img5 ? `
+            <div class="swiper-slide">
+                <img src="${img5}">
+            </div>
+            ` : ''}
 
         </div>
 
@@ -184,14 +487,14 @@ body{
 
         <div>
 
-            <span class="price">Rp 0</span>
+            <span class="price">${rupiah(priceNow)}</span>
 
-            <span class="old-price">Rp 0</span>
+            <span class="old-price">${rupiah(priceOld)}</span>
 
         </div>
 
         <div class="title">
-            
+            ${productName}
         </div>
 
         <div class="rating">
@@ -199,7 +502,7 @@ body{
         </div>
 
         <div class="shop">
-            🏪 
+            🏪 ${shopName}
         </div>
 
         <!-- DESKRIPSI -->
@@ -211,7 +514,7 @@ body{
             </div>
 
             <div>
-                
+                ${description}
             </div>
 
         </div>
@@ -224,9 +527,45 @@ body{
                 Fitur Produk
             </div>
 
-            
+            ${img2 ? `
+            <div class="feature-card">
 
-            
+                <img src="${img2}">
+
+                <div class="feature-content">
+
+                    <div class="feature-title">
+                        ${featureTitle1}
+                    </div>
+
+                    <div class="feature-text">
+                        ${featureText1}
+                    </div>
+
+                </div>
+
+            </div>
+            ` : ''}
+
+            ${img3 ? `
+            <div class="feature-card">
+
+                <img src="${img3}">
+
+                <div class="feature-content">
+
+                    <div class="feature-title">
+                        ${featureTitle2}
+                    </div>
+
+                    <div class="feature-text">
+                        ${featureText2}
+                    </div>
+
+                </div>
+
+            </div>
+            ` : ''}
 
         </div>
 
@@ -240,7 +579,15 @@ body{
 
             <div class="gallery-grid">
 
-                
+                ${galleryImages.map(img => `
+
+                <div class="gallery-item">
+
+                    <img src="${img}">
+
+                </div>
+
+                `).join('')}
 
             </div>
 
@@ -254,7 +601,7 @@ body{
                 Form Pemesanan
             </div>
 
-            
+            ${embedCode}
 
             <button class="buy-btn">
                 BELI SEKARANG
@@ -266,7 +613,7 @@ body{
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"><\/script>
 
 <script>
 
@@ -282,8 +629,36 @@ new Swiper(".mySwiper",{
 
 });
 
-</script>
+<\/script>
 
 </body>
 </html>
 
+`;
+
+    document.getElementById("preview").srcdoc = html;
+
+    document.getElementById("resultHtml").value = html;
+
+}
+
+function copyHtml(){
+
+    const textarea = document.getElementById("resultHtml");
+
+    textarea.select();
+
+    textarea.setSelectionRange(0,999999);
+
+    navigator.clipboard.writeText(textarea.value);
+
+    alert("HTML berhasil di copy");
+
+}
+
+generatePage();
+
+</script>
+
+</body>
+</html>
