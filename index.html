@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generator Landing Page Produk</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body{
+      background:#f5f5f5;
+      font-family:Arial, sans-serif;
+    }
+
+    .preview img{
+      max-width:100%;
+      border-radius:16px;
+    }
+  </style>
+</head>
+<body class="p-5">
+
+  <!-- FORM -->
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-lg">
+
+    <h1 class="text-3xl font-bold mb-6 text-center">
+      Generator Landing Page
+    </h1>
+
+    <div class="grid gap-4">
+
+      <input
+        type="text"
+        id="productName"
+        placeholder="Nama Produk"
+        class="border p-3 rounded-xl"
+      />
+
+      <input
+        type="text"
+        id="productPrice"
+        placeholder="Harga Produk"
+        class="border p-3 rounded-xl"
+      />
+
+      <input
+        type="text"
+        id="productImage"
+        placeholder="Link Gambar Produk"
+        class="border p-3 rounded-xl"
+      />
+
+      <textarea
+        id="productDesc"
+        placeholder="Deskripsi Produk"
+        class="border p-3 rounded-xl h-32"
+      ></textarea>
+
+      <button
+        onclick="generateLandingPage()"
+        class="bg-black text-white p-4 rounded-xl hover:bg-gray-800"
+      >
+        Generate Landing Page
+      </button>
+
+    </div>
+  </div>
+
+  <!-- PREVIEW -->
+  <div id="result" class="mt-10"></div>
+
+  <script>
+
+    function generateLandingPage(){
+
+      let name = document.getElementById("productName").value;
+      let price = document.getElementById("productPrice").value;
+      let image = document.getElementById("productImage").value;
+      let desc = document.getElementById("productDesc").value;
+
+      document.getElementById("result").innerHTML = `
+
+      <div class="preview max-w-5xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl">
+
+        <!-- HERO -->
+        <section class="grid md:grid-cols-2 gap-10 p-10 items-center">
+
+          <div>
+            <h1 class="text-5xl font-bold leading-tight mb-5">
+              ${name}
+            </h1>
+
+            <p class="text-2xl text-red-500 font-bold mb-5">
+              Rp ${price}
+            </p>
+
+            <p class="text-gray-600 leading-8 mb-8">
+              ${desc}
+            </p>
+
+            <button class="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full text-lg font-bold">
+              BELI SEKARANG
+            </button>
+          </div>
+
+          <div>
+            <img src="${image}" alt="Produk">
+          </div>
+
+        </section>
+
+        <!-- BENEFIT -->
+        <section class="bg-pink-50 p-10">
+
+          <h2 class="text-3xl font-bold text-center mb-10">
+            Kenapa Harus ${name}?
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="bg-white p-6 rounded-2xl shadow">
+              <h3 class="font-bold text-xl mb-3">
+                Aman Digunakan
+              </h3>
+              <p>
+                Formula ringan dan nyaman dipakai sehari-hari.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow">
+              <h3 class="font-bold text-xl mb-3">
+                Hasil Maksimal
+              </h3>
+              <p>
+                Membantu memberikan hasil lebih cepat dan efektif.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow">
+              <h3 class="font-bold text-xl mb-3">
+                Harga Terjangkau
+              </h3>
+              <p>
+                Produk premium dengan harga ramah kantong.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- TESTIMONI -->
+        <section class="p-10">
+
+          <h2 class="text-3xl font-bold text-center mb-10">
+            Testimoni Pembeli
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="bg-gray-100 p-6 rounded-2xl">
+              ⭐⭐⭐⭐⭐
+              <p class="mt-3">
+                Produk bagus banget, pengiriman cepat.
+              </p>
+            </div>
+
+            <div class="bg-gray-100 p-6 rounded-2xl">
+              ⭐⭐⭐⭐⭐
+              <p class="mt-3">
+                Baru pakai beberapa hari sudah terasa hasilnya.
+              </p>
+            </div>
+
+            <div class="bg-gray-100 p-6 rounded-2xl">
+              ⭐⭐⭐⭐⭐
+              <p class="mt-3">
+                Recommended banget, bakal beli lagi.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-black text-white text-center p-14">
+
+          <h2 class="text-4xl font-bold mb-5">
+            Dapatkan ${name} Sekarang
+          </h2>
+
+          <p class="mb-8 text-lg">
+            Promo terbatas hari ini!
+          </p>
+
+          <button class="bg-red-500 hover:bg-red-600 px-10 py-4 rounded-full text-xl font-bold">
+            ORDER SEKARANG
+          </button>
+
+        </section>
+
+      </div>
+
+      `;
+    }
+
+  </script>
+
+</body>
+</html>
