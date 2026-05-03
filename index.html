@@ -1,259 +1,635 @@
-# Landing Page HTML Style Mirip Venollia
-
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cream Whitening</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<title>Generator Landing Page Premium</title>
 
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#fff;
-      color:#222;
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f3f3f3;
+}
+
+.wrapper{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:20px;
+    padding:20px;
+}
+
+.panel{
+    background:#fff;
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+textarea{
+    resize:none;
+    min-height:100px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#ee4d2d;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
+}
+
+iframe{
+    width:100%;
+    height:95vh;
+    border:none;
+    border-radius:14px;
+    background:#fff;
+}
+
+.small{
+    font-size:12px;
+    color:#777;
+    margin-top:5px;
+}
+
+@media(max-width:900px){
+
+    .wrapper{
+        grid-template-columns:1fr;
     }
 
-    .gradient-bg{
-      background: linear-gradient(to bottom,#fff7f7,#ffffff);
-    }
+}
 
-    .btn-order{
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse{
-      0%{transform:scale(1)}
-      50%{transform:scale(1.05)}
-      100%{transform:scale(1)}
-    }
-  </style>
+</style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="gradient-bg py-10 px-5">
+<div class="wrapper">
 
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <!-- PANEL -->
+    <div class="panel">
 
-      <div>
+        <h2>Generator Landing Page</h2>
 
-        <div class="inline-block bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-bold mb-5">
-          BEST SELLER PRODUCT
+        <div class="form-group">
+            <label>Nama Produk</label>
+            <input type="text" id="productName" value="CREAM WHITENING SPF50">
         </div>
 
-        <h1 class="text-5xl font-extrabold leading-tight mb-6">
-          Cream Whitening
-          <span class="text-pink-500">Glowing Natural</span>
-        </h1>
-
-        <p class="text-lg text-gray-600 mb-6 leading-8">
-          Membantu mencerahkan kulit wajah, menyamarkan noda hitam,
-          dan membuat wajah tampak lebih glowing.
-        </p>
-
-        <div class="flex items-center gap-4 mb-8">
-          <div class="text-4xl font-bold text-pink-500">
-            Rp99.000
-          </div>
-
-          <div class="line-through text-gray-400 text-xl">
-            Rp199.000
-          </div>
+        <div class="form-group">
+            <label>Harga Sekarang</label>
+            <input type="text" id="priceNow" value="149000">
         </div>
 
-        <button class="btn-order bg-pink-500 hover:bg-pink-600 text-white px-10 py-5 rounded-full text-xl font-bold shadow-2xl">
-          BELI SEKARANG
+        <div class="form-group">
+            <label>Harga Coret</label>
+            <input type="text" id="priceOld" value="195000">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar 1</label>
+            <input type="text" id="img1" value="https://down-id.img.susercontent.com/file/id-11134207-822wh-mmpmrwn2d1qbaf.webp">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar 2</label>
+            <input type="text" id="img2" value="https://down-id.img.susercontent.com/file/id-11134207-822wk-mmksshp7x1c34f">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar 3</label>
+            <input type="text" id="img3" value="https://down-id.img.susercontent.com/file/id-11134207-8224y-mioncgoznc3rfb">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar 4</label>
+            <input type="text" id="img4" value="">
+        </div>
+
+        <div class="form-group">
+            <label>Gambar 5</label>
+            <input type="text" id="img5" value="">
+        </div>
+
+        <div class="form-group">
+            <label>Deskripsi Umum</label>
+            <textarea id="description">Cream whitening SPF50 membantu mencerahkan dan melindungi kulit dari sinar UV.</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Judul Deskripsi 1</label>
+            <input type="text" id="descTitle1" value="Perlindungan SPF 50">
+        </div>
+
+        <div class="form-group">
+            <label>Isi Deskripsi 1</label>
+            <textarea id="descText1">Melindungi kulit dari sinar UV dan menjaga kulit tetap cerah sepanjang hari.</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Judul Deskripsi 2</label>
+            <input type="text" id="descTitle2" value="Mencerahkan Wajah">
+        </div>
+
+        <div class="form-group">
+            <label>Isi Deskripsi 2</label>
+            <textarea id="descText2">Membantu membuat wajah tampak lebih glowing dan sehat alami.</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Nama Toko</label>
+            <input type="text" id="shopName" value="venolliastore.com">
+        </div>
+
+        <div class="form-group">
+            <label>Embed Code OrderOnline</label>
+            <textarea id="embedCode"></textarea>
+
+            <div class="small">
+                Paste embed code OrderOnline di sini
+            </div>
+        </div>
+
+        <button onclick="generatePage()">
+            GENERATE LANDING PAGE
         </button>
 
-      </div>
+    </div>
 
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop"
-          class="rounded-[40px] shadow-2xl"
-        >
-      </div>
+    <!-- PREVIEW -->
+    <div class="panel">
+        <iframe id="preview"></iframe>
+    </div>
+
+</div>
+
+<script>
+
+function rupiah(number){
+    return "Rp " + Number(number).toLocaleString("id-ID");
+}
+
+function generatePage(){
+
+    const productName = document.getElementById("productName").value;
+    const priceNow = document.getElementById("priceNow").value;
+    const priceOld = document.getElementById("priceOld").value;
+
+    const img1 = document.getElementById("img1").value;
+    const img2 = document.getElementById("img2").value;
+    const img3 = document.getElementById("img3").value;
+    const img4 = document.getElementById("img4").value;
+    const img5 = document.getElementById("img5").value;
+
+    const description = document.getElementById("description").value;
+
+    const descTitle1 = document.getElementById("descTitle1").value;
+    const descText1 = document.getElementById("descText1").value;
+
+    const descTitle2 = document.getElementById("descTitle2").value;
+    const descText2 = document.getElementById("descText2").value;
+
+    const shopName = document.getElementById("shopName").value;
+
+    const embedCode = document.getElementById("embedCode").value;
+
+    const html = `
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    background:#fff;
+}
+
+.swiper{
+    width:100%;
+    aspect-ratio:1/1;
+}
+
+.swiper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.flash-sale{
+    background:#ee4d2d;
+    color:#fff;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+}
+
+.content{
+    padding:15px;
+}
+
+.price{
+    color:#ee4d2d;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    margin-left:10px;
+}
+
+.title{
+    margin-top:12px;
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+}
+
+.rating{
+    margin-top:10px;
+    color:#666;
+    font-size:14px;
+}
+
+.shop-box{
+    margin-top:20px;
+    padding:15px;
+    border:1px solid #eee;
+    border-radius:12px;
+    background:#fafafa;
+}
+
+.section{
+    margin-top:25px;
+    padding-top:20px;
+    border-top:8px solid #f3f3f3;
+}
+
+.section-title{
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.desc{
+    color:#555;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.feature-card{
+    border:1px solid #eee;
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.feature-img{
+    width:100%;
+    display:block;
+}
+
+.feature-content{
+    padding:15px;
+}
+
+.feature-title{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.feature-desc{
+    font-size:14px;
+    line-height:1.7;
+    color:#555;
+}
+
+.extra-product-img{
+    width:100%;
+    border-radius:14px;
+    margin-top:15px;
+}
+
+.review{
+    border-bottom:1px solid #eee;
+    padding:15px 0;
+}
+
+.review-name{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.review-text{
+    color:#555;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.buy-btn{
+    width:100%;
+    border:none;
+    padding:16px;
+    border-radius:10px;
+    background:#ee4d2d;
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+    margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SLIDER -->
+
+    <div class="swiper mySwiper">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <img src="${img1}">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="${img2}">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="${img3}">
+            </div>
+
+            ${img4 ? `
+            <div class="swiper-slide">
+                <img src="${img4}">
+            </div>
+            ` : ''}
+
+            ${img5 ? `
+            <div class="swiper-slide">
+                <img src="${img5}">
+            </div>
+            ` : ''}
+
+        </div>
+
+        <div class="swiper-pagination"></div>
 
     </div>
 
-  </section>
+    <!-- FLASH -->
 
+    <div class="flash-sale">
 
-  <!-- BENEFIT -->
-  <section class="py-16 px-5 bg-white">
-
-    <div class="max-w-6xl mx-auto">
-
-      <h2 class="text-4xl font-bold text-center mb-14">
-        Manfaat Produk
-      </h2>
-
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <div class="bg-pink-50 p-8 rounded-3xl shadow-lg">
-          <div class="text-5xl mb-5">✨</div>
-          <h3 class="text-2xl font-bold mb-4">
-            Mencerahkan Kulit
-          </h3>
-          <p class="text-gray-600 leading-7">
-            Membantu kulit terlihat lebih cerah dan bersih alami.
-          </p>
+        <div>
+            FLASH SALE HARI INI
         </div>
 
-        <div class="bg-pink-50 p-8 rounded-3xl shadow-lg">
-          <div class="text-5xl mb-5">💧</div>
-          <h3 class="text-2xl font-bold mb-4">
-            Menjaga Kelembapan
-          </h3>
-          <p class="text-gray-600 leading-7">
-            Formula ringan yang membantu menjaga kelembapan kulit.
-          </p>
+        <div>
+            STOK TERBATAS
         </div>
-
-        <div class="bg-pink-50 p-8 rounded-3xl shadow-lg">
-          <div class="text-5xl mb-5">🌸</div>
-          <h3 class="text-2xl font-bold mb-4">
-            Kulit Lebih Glowing
-          </h3>
-          <p class="text-gray-600 leading-7">
-            Membuat wajah tampak sehat dan glowing sepanjang hari.
-          </p>
-        </div>
-
-      </div>
 
     </div>
 
-  </section>
+    <!-- CONTENT -->
 
+    <div class="content">
 
-  <!-- BEFORE AFTER -->
-  <section class="py-16 px-5 bg-pink-50">
+        <div>
+            <span class="price">${rupiah(priceNow)}</span>
+            <span class="old-price">${rupiah(priceOld)}</span>
+        </div>
 
-    <div class="max-w-6xl mx-auto">
+        <div class="title">
+            ${productName}
+        </div>
 
-      <h2 class="text-4xl font-bold text-center mb-14">
-        Before & After
-      </h2>
+        <div class="rating">
+            ⭐ 4.9 | 2.5RB+ Terjual
+        </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
+        <!-- TOKO -->
 
-        <img
-          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop"
-          class="rounded-3xl shadow-xl"
-        >
+        <div class="shop-box">
+            🏪 ${shopName}
+        </div>
 
-        <img
-          src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop"
-          class="rounded-3xl shadow-xl"
-        >
+        <!-- DESKRIPSI -->
 
-      </div>
+        <div class="section">
+
+            <div class="section-title">
+                Deskripsi Produk
+            </div>
+
+            <div class="desc">
+                ${description}
+            </div>
+
+        </div>
+
+        <!-- FITUR -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Fitur Produk
+            </div>
+
+            <div class="feature-card">
+
+                <img src="${img2}" class="feature-img">
+
+                <div class="feature-content">
+
+                    <div class="feature-title">
+                        ${descTitle1}
+                    </div>
+
+                    <div class="feature-desc">
+                        ${descText1}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="feature-card">
+
+                <img src="${img3}" class="feature-img">
+
+                <div class="feature-content">
+
+                    <div class="feature-title">
+                        ${descTitle2}
+                    </div>
+
+                    <div class="feature-desc">
+                        ${descText2}
+                    </div>
+
+                </div>
+
+            </div>
+
+            ${img4 ? `
+            <img src="${img4}" class="extra-product-img">
+            ` : ''}
+
+            ${img5 ? `
+            <img src="${img5}" class="extra-product-img">
+            ` : ''}
+
+        </div>
+
+        <!-- REVIEW -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Penilaian Produk
+            </div>
+
+            <div class="review">
+
+                <div class="review-name">
+                    ⭐⭐⭐⭐⭐ Jessica
+                </div>
+
+                <div class="review-text">
+                    Produk bagus banget dan cepat sampai.
+                </div>
+
+            </div>
+
+            <div class="review">
+
+                <div class="review-name">
+                    ⭐⭐⭐⭐⭐ Vania
+                </div>
+
+                <div class="review-text">
+                    Packing aman dan hasilnya bagus.
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ORDER -->
+
+        <div class="section">
+
+            <div class="section-title">
+                Form Pemesanan
+            </div>
+
+            ${embedCode}
+
+            <button class="buy-btn">
+                BELI SEKARANG
+            </button>
+
+        </div>
 
     </div>
 
-  </section>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"><\/script>
 
-  <!-- TESTIMONI -->
-  <section class="py-16 px-5">
+<script>
 
-    <div class="max-w-6xl mx-auto">
+new Swiper(".mySwiper",{
 
-      <h2 class="text-4xl font-bold text-center mb-14">
-        Testimoni Customer
-      </h2>
+    pagination:{
+        el:".swiper-pagination"
+    },
 
-      <div class="grid md:grid-cols-3 gap-8">
+    autoplay:{
+        delay:3000
+    }
 
-        <div class="bg-white border p-8 rounded-3xl shadow-lg">
-          <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+});
 
-          <p class="text-gray-600 leading-8 mb-5">
-            Baru 1 minggu pakai wajah terasa lebih cerah dan lembut.
-          </p>
-
-          <div class="font-bold">
-            Anita
-          </div>
-        </div>
-
-        <div class="bg-white border p-8 rounded-3xl shadow-lg">
-          <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
-
-          <p class="text-gray-600 leading-8 mb-5">
-            Packaging bagus dan produk cepat meresap di kulit.
-          </p>
-
-          <div class="font-bold">
-            Rina
-          </div>
-        </div>
-
-        <div class="bg-white border p-8 rounded-3xl shadow-lg">
-          <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
-
-          <p class="text-gray-600 leading-8 mb-5">
-            Recommended banget buat yang mau kulit glowing.
-          </p>
-
-          <div class="font-bold">
-            Salsa
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CTA -->
-  <section class="bg-pink-500 text-white py-20 px-5 text-center">
-
-    <div class="max-w-4xl mx-auto">
-
-      <h2 class="text-5xl font-extrabold mb-6">
-        Promo Hari Ini
-      </h2>
-
-      <p class="text-xl mb-10 leading-8">
-        Dapatkan harga spesial dan bonus menarik hanya hari ini.
-      </p>
-
-      <button class="bg-white text-pink-500 px-12 py-5 rounded-full text-2xl font-bold shadow-2xl hover:scale-105 transition">
-        ORDER SEKARANG
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="py-8 text-center text-gray-500 text-sm">
-    © 2026 Cream Whitening. All Rights Reserved.
-  </footer>
+<\/script>
 
 </body>
 </html>
-```
 
-## Cara Pakai
+`;
 
-1. Copy semua kode HTML
-2. Simpan dengan nama `index.html`
-3. Buka di browser
-4. Edit:
+    document.getElementById("preview").srcdoc = html;
 
-   * gambar
-   * harga
-   * nama produk
-   * warna
-   * tombol checkout
-5. Upload ke hosting / Vercel / Netlify
+}
+
+generatePage();
+
+</script>
+
+</body>
+</html>
